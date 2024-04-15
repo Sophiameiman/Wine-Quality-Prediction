@@ -1,2 +1,2 @@
-# QTM-347-Project
-This is for QTM 347 Machine Learning..
+# Wine Quality Prediction Project
+This project predicts wine quality based on a range of physicochemical tests predictors.
