@@ -48,9 +48,24 @@ The experiments will be conducted using Python, specifically leveraging librarie
 - **Modeling Details for Neural Networks (TBD):** If neural network models are considered later, details about the network structure, number of layers, activation functions, and optimizer choices will be included here.
 
 
-### Methodology (TBD)
+### Methodology 
+
+Random Forest Classifier:
+For the second model, we chose Random Forest Classifier. The Random Forest classifier excels in predicting categorical outcomes such as wine quality because it leverages an ensemble of decision trees, which reduces overfitting and enhances overall accuracy. This method is effective at handling datasets with many variables and complex, non-linear relationships between features, typical of assessments like wine quality. Random Forest also inherently performs feature selection, prioritizing more significant features during training. Moreover, it is robust to noise and does not require input scaling, simplifying the preprocessing steps. Overall, these characteristics make Random Forest a strong choice for modeling and predicting categories based on multiple influencing factors.
+
+The Random Forest Classifier model shown has achieved an overall accuracy of 73%, which is the highest among the three models tested, using the Randomized SearchCV method for hyperparameter tuning across five folds of cross-validation. The best parameters identified were 600 trees ('n_estimators'), a minimum of 5 samples required to split an internal node ('min_samples_split'), and at least 1 sample required at each leaf node ('min_samples_leaf'). From the classification report, it's evident that the model performs well particularly in predicting wine qualities rated 5 and 6, with precision-recall balances resulting in F1-scores of 0.80 and 0.74, respectively. However, the model struggles with the extreme quality categories (3, 4, 7, and 8), likely due to fewer training samples in these categories, as reflected in the support column and very low F1-scores. This discrepancy highlights the model's limitations in handling imbalanced datasets. The confusion matrix further illustrates these strengths and weaknesses, showing concentrated predictions around the middle quality ratings and sparse or inaccurate predictions for the extremes.
 
 ### Results and Discussion (TBD)
+Since Random Forest Classifier out-performed the other models, we decided to use Random Forest Classifier to see the feature importance. This may generate some insights in wine selection. Based on the feature importance visualization from the Random Forest model, we can draw several conclusions about the relationship between physicochemical properties and red wine quality:
+
+- **Alcohol is Key**: Alcohol content has the highest importance score, suggesting it's the most significant predictor of red wine quality. Higher alcohol levels may be associated with the ripeness of grapes and overall balance, which are indicative of a wine's quality.
+
+- **Impact of Sulphates**: Sulphates, which likely refer to sulfur dioxide used as a preservative, are the second most important feature. Their presence at certain levels could influence the freshness and shelf life of wine, impacting its perceived quality.
+
+- **Role of Acidity**: Volatile acidity and citric acid come next, underscoring the importance of acid content in wine taste and stability. The balance of acidity is crucial for the palate's perception and wine's aging potential.
+
+- **Influence of Sulfur Dioxide**: Total sulfur dioxide is another top feature, highlighting its role in preventing oxidation and maintaining wine's freshness.
+
 In conclusion, the project successfully demonstrated the potential of machine learning for predicting red wine quality based on physicochemical properties. Among the models evaluated, the random forest classifier stood out as the most reliable, achieving the highest accuracy, precision, recall, and F1 score. This model's strength lies in its ability to handle feature interactions, its robustness against overfitting, and its capacity to capture non-linear relationships, all of which are critical for accurate wine quality prediction. The analysis revealed that alcohol, sulphates, and volatile acidity are the top three features that could serve as criteria when choosing high-quality wine.
 
 The findings highlight how machine learning can enhance decision-making in the wine industry, benefiting both producers and consumers. By leveraging predictive modeling, the project provides a robust framework for establishing clear criteria for identifying high-quality wines, thereby addressing the challenges faced by amateur wine consumers and improving the overall wine selection process.
