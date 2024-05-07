@@ -1,4 +1,4 @@
-# Predictive Analysis of Wine Quality
+# Predictive Analysis of Red Wine Quality
 
 ## Abstract
 This project utilizes machine learning techniques to classify and predict wine quality based on physicochemical properties. By analyzing a dataset from the UCI Machine Learning Repository, our goal is to develop a model that can provide insights into the criteria that define high-quality wines, assisting both enthusiasts and professionals in making informed choices.
@@ -30,14 +30,14 @@ The dataset used in this project is the Wine Quality dataset available from the 
 
 - **Number of Instances:** 1599 for red wine and 4898 for white wine.
 - **Number of Attributes:** 12 per set, including the output attribute (quality).
-- **Basic Statistics:** Detailed statistics including mean, median, mode, and standard deviation for each attribute are to be provided in this section.
+- **Basic Statistics:** Detailed statistics including mean, median, mode, and standard deviation for each attribute are provided in this section.
 
 ### Experimental Setup
-The models planned for evaluation include K-Nearest Neighbors (KNN), Random Forests, and Quadratic Discriminant Analysis (QDA). For each model, the following setups will be considered:
+The models planned for evaluation include logistic regression with best subset selection, K-Nearest Neighbors (KNN), and Random Forests. For each model, the following setups will be considered:
 
+- **Logistic Regression with Best Subset Selection:** Parameters such as 'n_neighbors' and the distance metric will be tuned to optimize performance.
 - **K-Nearest Neighbors (KNN):** Parameters such as 'n_neighbors' and the distance metric will be tuned to optimize performance.
 - **Random Forests:** Parameters like the number of trees, depth of the trees, and the number of features to consider for the best split will be tuned.
-- **Quadratic Discriminant Analysis (QDA):** Focus will be on assessing the assumptions of normal distributions within the feature set.
 
 Each model will undergo a rigorous validation process, likely employing techniques such as cross-validation and various performance metrics (accuracy, F1 score, confusion matrix, etc.). 
 
