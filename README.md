@@ -44,6 +44,7 @@ The experiments will be conducted using Python, specifically leveraging librarie
 
 ### Methodology 
 1. **Logistic Regression with Best Subset Selection:**
+
 We utilized logistic regression combined with Best Subset Selection, focusing on a robust set of nine predictors: `fixed acidity`, `volatile acidity`, `citric acid`, `residual sugar`, `chlorides`, `free sulfur dioxide`, `total sulfur dioxide`, `sulphates`, and `alcohol`. We integrate Stratified K-Fold cross-validation (K=4) to ensure that each class is evenly represented during model training, thereby maintaining model generalizability and preventing class imbalance.
 
 Performance highlights:
@@ -52,6 +53,7 @@ Performance highlights:
    - Challenges: Predicting extreme classes due to fewer training samples.
 
 2. **Random Forest Classifier:**
+
 The Random Forest classifier excels in predicting categorical outcomes such as wine quality because it leverages an ensemble of decision trees, which reduces overfitting and enhances overall accuracy. This method is effective at handling datasets with many variables and complex, non-linear relationships between features, typical of assessments like wine quality. Random Forest also inherently performs feature selection, prioritizing more significant features during training. Moreover, it is robust to noise and does not require input scaling, simplifying the preprocessing steps. Overall, these characteristics make Random Forest a strong choice for modeling and predicting categories based on multiple influencing factors.
 
 Performance highlights:
@@ -60,6 +62,7 @@ Performance highlights:
    - Struggles with extreme quality categories due to class imbalance.
 
 3. **K-Nearest Neighbors:**
+
 KNN is highly adaptable, effectively handling both categorical and continuous variables, and is non-parametric, making no assumptions about data distribution. This flexibility is particularly advantageous for analyzing complex, real-world datasets. After conducting a grid search for the KNN model, the optimal parameter for n_neighbors was identified as 1.
 
 Performance highlights:
@@ -78,8 +81,8 @@ The evaluation of our models revealed that the Random Forest Classifier signific
 
 ### Discussion
 The superior performance of the Random Forest Classifier can be attributed to its ensemble method, which integrates multiple decision trees to reduce variance and bias, thereby improving prediction accuracy. Feature importance analysis highlighted that alcohol, sulphates, and volatile acidity are the most significant predictors of wine quality. These findings align with known wine science, where these factors are critical in defining the taste, balance, and preservation of wine.
-- Comparison: Compared to existing methods, our model's ability to systematically evaluate and rank the importance of different physicochemical properties provides a more empirical approach to wine quality assessment than traditional tasting and scoring, which can be subjective.
-- Challenges and Improvements: While our model performs well on average, it struggles with extreme quality categories, likely due to the underrepresentation of these classes in the dataset. Future work could improve upon this by incorporating a more balanced dataset or applying techniques like SMOTE for synthetic data generation to better train the model on minority classes.
+- **Comparison**: Compared to existing methods, our model's ability to systematically evaluate and rank the importance of different physicochemical properties provides a more empirical approach to wine quality assessment than traditional tasting and scoring, which can be subjective.
+- **Challenges and Improvements**: While our model performs well on average, it struggles with extreme quality categories, likely due to the underrepresentation of these classes in the dataset. Future work could improve upon this by incorporating a more balanced dataset or applying techniques like SMOTE for synthetic data generation to better train the model on minority classes.
 
 ### Conclusion
 This project successfully leveraged machine learning to predict red wine quality based on physicochemical properties, with the Random Forest Classifier emerging as the most effective model. We demonstrated that machine learning could provide a quantifiable and objective basis for wine quality assessment, which is traditionally subjective. By identifying key physicochemical properties that influence wine quality, our findings offer valuable insights that can assist wine producers, consumers, and retailers in making informed decisions. The project not only addressed the challenges faced by amateur wine consumers but also enhanced the overall wine selection process, contributing to the broader field of food science and quality control.
